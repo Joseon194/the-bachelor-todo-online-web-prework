@@ -49,6 +49,16 @@ def get_occupation(data, hometown)
 end
 
 def get_average_age_for_season(data, season)
-  
+   age = []
+  number_of_age = 0
+  data[season].each do |season_hash|
+    # We need to add to the age array
+    # We need to increase the number_of_age number
+    # We need to devide the number_of_age by the amount of people(= length of the age array)
+    age << season_hash["age"]
+        number_of_age += season_hash["age"].to_i
+  end
+  average = (number_of_age.to_f / age.size).round
+  average
   # code here
 end
