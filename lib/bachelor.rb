@@ -11,6 +11,15 @@ end
 
 def get_contestant_name(data, occupation)
   # code here
+   contestant_name = []
+  data.each do |season, data_array|
+    data_array.each do |data_hash|
+      if(data_hash["occupation"] == occupation)
+        contestant_name << data_hash["name"]
+      end
+    end
+  end
+  contestant_name.join(', ')
 end
 
 def count_contestants_by_hometown(data, hometown)
